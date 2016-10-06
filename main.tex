@@ -1,0 +1,143 @@
+\documentclass[pdftex]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[titletoc]{appendix}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{fancyhdr}
+
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{breaklinks=true}
+\urlstyle{same}
+
+\usepackage[square,numbers]{natbib}
+\usepackage{graphicx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lfoot{JR Barrett}
+\rfoot{Page \thepage}
+
+\title{Securities Transaction Banking\\
+    Assignment 1: Settlement and the Blockchain}
+\author{James R. Barrett, CFA \\ University Number: 3035348061}
+\date{October 2016}
+
+\begin{document}
+
+\maketitle
+
+\renewcommand\abstractname{Questions}
+\begin{abstract}
+``So once you know what the question actually is, you'll know what the answer means'' \cite{adams1995hitchhiker}
+
+The purpose of this assignment is to gain familiarity with the concept of the Blockchain and how it can apply to settlement of Securities. In doing so, the following questions must be answered:
+
+\begin{enumerate}
+ \item Compare and Contrast the current securities settlement (based on T+2) with the opportunities promised by a Blockchain-based settlement process. To answer this question please:
+    \begin{enumerate}
+     \item Briefly describe the working principle and involved parties for each settlement option.
+     \item Explain similarities and differences between the two options.
+    \end{enumerate}
+ \item Explain where the potential benefits of a Blockchain solution come from.
+ \item What do you think are the reasons why the banks and markets do not immediately use Blockchain-Settlement to achieve the benefits of this option?
+\end{enumerate}
+
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+
+Critics of Blockchain technology argue it is a solution looking for a problem, but as A. Lewis and other proponents mention, it is a technology in its infancy with potential to be applied to a range of issues \cite{SolnProb}. One of these problems is the transfer of funds and securities without necessarily using a financial institution. The current securities transaction process has evolved over the past 100 years as markets have evolved, but has almost always required financial institutions to act as an intermediary. In the original paper on Bitcoin a ``purely peer-to-peer version of electronic cash'' \cite{Bitcoin} was suggested as an alternate system which would allow payments to be sent directly between parties while maintaining the trust between parties by forming a publicly distributed ledger of all prior transactions.
+With further research into this area, some proponents have suggested that Blockchain technology could be used to replace the current securities settlement process and in the process; lowering transaction costs, increasing counter-party trust, and speeding up the time taken to complete a transaction.
+
+\section{Current securities settlement process}
+
+The current securities settlement process, for most instruments traded in a secondary market, follows a format known as T+2. This means the actual transfer of ownership, and payment, occurs two working days after the transaction took place. There are three main functions in this system: Clearing, Settlement and Custody \cite{CCP}. Each function has its own participants, though some participants have different departments allowing it to provide services across more than one function.
+
+When a transaction occurs, the traders acting for the two clients have matched orders at a price and a set volume of the security, either through an electronic trading system or on a physical trading floor. Their brokers then issue a trade confirmation to the central counter party (CCP). This trade confirmation is sometimes known as the basis of fulfilment and it contains all the details of the trade required for settlement such as the instrument, buy/sell, price, quantity, counter-parties, fees, and the date and time the trade took place \cite{CaytasCU}.
+
+In order for the trade to settle, all participants have to be cleared that they can fulfil all obligations, this includes knowing their identity. During the clearing stage, some participants will perform additional services for their clients such as risk management, provision of additional liquidity if required, and the calculation for netting of obligations \cite{CCP}. Generally, clearing is performed by more than one party on the same transaction with a different focus from each. Trading parties will perform some checks on the transaction before passing the trade confirmation to the CCP. The CCP will focus on the participants' ability to fulfil the transaction as promised either directly or by collateral. The trade confirmation is then passed to the central security depository (CSD) to match the delivery instructions received from both sides.
+
+At settlement, the actual transfer takes place as per matched buy and sell instructions. The netted cash amounts are transferred and the security's ownership is adjusted to the buyer's account. Depending on the end client, this can be performed by the CCP or the CSD or by the financial institution acting as broker if they are acting on behalf of both clients.
+
+Physical (and electronic) share certificates for publicly traded companies are held at centralised custodians. These custodians are typically also CSDs and work closely with issuers. In some cases if a financial institution has a direct relationship with an issuer, (e.g. if they were sole lead in the IPO), a broker may act as prime custodian for the security \cite{CCP}. The role of the custodian is to safeguard the certificates against damage or theft on behalf of the owners.
+
+Due to the number of checks required to ensure this process goes smoothly, parties are given two days from the time the transaction takes place to settlement. If a party is not able to meet their obligations on the settlement date, both the financial institution representing them and the CCP are exposed to reputational and actual loss risks. Ensuring these checks are accurate and comply with regulator's increasing demands has seen the cost of trade compliance rise significantly \cite{TradeRisk} since the 2008 financial crisis which has led banks to start looking at other options that might be able to substitute parts of this process, or even replace it all together.
+
+
+\section{Blockchain-based settlement process}
+In the proposed Blockchain-based settlement process, after a transaction has occurred, the data that would have been entered in a basis of fulfilment gets entered on a publicly distributed register \cite{CaytasCU}. These blocks are encrypted, with only the hash value publicly visible and then linked together in a chain, with each block referencing the hash value of the previous block.
+
+Due to encryption using public/private keys, users can only view their own data in the chain. Also because the ledger is distributed with copies kept in numerous locations, any changes to blocks already in the chain will not be accepted by the system \cite{CaytasCU}.
+
+This process changes the role of many of the participants from a typical T+2 settlement process as payment and transfer of the securities happen in real time. As participants have transparency pre-trade, there is no need for post-trade clearing by CCPs \cite{CaytasCU}. CCPs may still be used to help with netting of cash transactions. The role of CSDs will change to more of an oversight function, managing the changing technology and access \cite{WymanEuro}. Custodians and prime brokers may still be used to manage holdings information but some securities may be issued directly only the Blockchain.
+
+Financial institutions may still be required to assist with placing orders and matching trades through the electronic trading system, depending if a public or private Blockchain model is adopted. In a public Blockchain, anyone can access the system and participate in processing. In a private Blockchain, only authorised parties may participate. A private Blockchain model would allow for additional screening of participants and erroneous transactions could be corrected post-fact by authorised parties \cite{gentleIntro}. In either case, dealers will still be able to assist their clients with providing liquidity in thin markets and advising on execution and transactions \cite{WymanEuro}.
+
+\section{Blockchain vs T+2 settlement}
+
+On first inspection, there doesn't appear to be much overlap between the two systems. But in reality, the similarities mean that some of the benefits of Blockchain may be able to be phased in and synchronised with current systems \cite{WymanEuro}.
+
+Both a Blockchain solution and the current settlement process are based around ledgers. In T+2 settlement, each financial institution has a copy of its own ledger, but no access to view the details of trades not on their ledger. In a Blockchain solution, every participant has a copy of every transaction in an encrypted form. It is essentially a write-only dataset, stored in multiple locations \cite{gentleIntro}. This means in both systems, traders can view the full details of their transactions as well as a sanitised version of historical trade data as this information is currently provided to participants by CCPs and electronic trading systems.
+
+The big winners from a Blockchain solution are the clients, especially large asset managers. The main difference between the two systems, from a client's point of view, is the time taken between execution and settlement. In the current system, it is two days but under a Blockchain system it would happen in real time. In some cases this will reduce the need for them to post collateral \cite{gentleIntro}. In addition to this, it is expected that Blockchain systems will reduce costs for financial institution through streamlining back office operations and simplifying the process of complying with regulations and audit procedures \cite{DBS}. Clients can expect to benefit from lower fees as a result of these cost savings by the banks. If banks and other financial institutions refuse to lower fees under this model, the low barriers to entry will mean that some large funds will participate directly in the market, bypassing financial institutions all together.
+
+The participants in the system remain largely unchanged, but as previously discussed, their roles will be different under Blockchain. Clearing and Settlement functions will be removed and both CCPs and CSDs will have more of a oversight and audit role, working with regulators rather than directly participating. Financial institutions will still have a role, especially under a private model.
+
+The technology required is the largest difference the two systems. The T+2 settlement process has been used for almost 30 years having been shortened from T+5 and T+3 \cite{CCP}. Over this time, banks have worked separately to adopt new technology with no standard protocols. Under a Blockchain system, all the participants would have to agree and follow the same technology standards and best practices in order to create a commercial application \cite{Deloitte}. Also, in order to maintain an accurate and up-to-date ledger, banks will need to invest in processing power to help generate the new blocks, and also in storage capacity to maintain the ever-growing ledger. The security technology for each is also different. Under the current system, the trade confirmation is passed using typical web security protocols. The main security features of the system are in network security, preventing external parties access to the local network. Under a Blockchain system, the main security will involve ensuring all entries are cryptographically secured using a public/private key pair.
+
+\section{Source of Blockchain's advantages}
+
+The various technologies used in a Blockchain system are the main source of its advantages. As previously discussed, the pre-trade clearance that allows for real time transactions are a big advantage to clients of financial institutions \cite{gentleIntro}. With real-time transactions, the collateral required will be lower which means more liquidity for financial markets \cite{WymanEuro}.
+Also, vanilla share certificates are not the only contracts able to be transacted on a Blockchain. As blocks in the chain are fixed, once added to the chain, participants will be able to trade smart contracts. These smart contracts will be able to automatically generate payments in the future, such as bond coupons \cite{DBS}
+
+The publicly distributed ledger, that requires mutual consensus verification, helps to prevent malicious manipulation and allows for richer datasets \cite{WymanEuro}. This means more information can be stored allowing for more complete audits by regulators and potentially the ability to analyse a participant's transaction history to aid in detecting fraud and attempts at money laundering as cryptographic keys can be used to connect real world identities to each digital transaction \cite{Deloitte}. The public-private key pair encryption technology will allow for security and confidentiality of transactions while giving participants the ability to judiciously reveal information if required by regulators\cite{WymanEuro}. 
+
+Digital signing with a private key will also increase mutual trust in the system which is a key-requirement for ensuring a publicly distributed ledger-based system is successful. In 2014, Anti-Money Laundering (AML) compliance costs globally were estimated at around US\$10 billion \cite{KPMG}. Other than the outright cost, the effort required by financial institutions to maintain this vigilance leads to delays in trade processing, duplication of efforts between firms as well as the potential for fines from the regulators for any breaches. A Blockchain system would automate many of these manual processes, and a centrally maintained database of participants would remove duplication. Updates would again be distributed in real time and records of all documents could easily be shared with regulators \cite{Deloitte}. 
+
+Other than compliance costs, spending for back office trade processing and operations are forecast to be cheaper under Blockchain for financial institutions and CCPs \cite{WymanEuro}. In the current economic environment, with rising compliance costs and diminishing revenues from trading, this advantage alone has provided the enticement for many financial institutions to start investigating a BLockchain solution \cite{Deloitte}.
+
+\section{Barriers to adoption of a Blockchain solution}
+
+With all the advantages available under a Blockchain system, it may seem surprising that more banks are not investing resources in exploring this solution. However, there are still many barriers that need to be overcome before Blockchain becomes an accepted replacement for the currently securities settlement process.
+
+Firstly, a common set of standards and best practices need to be accepted and adopted by all the participants, or at very least, a majority of the major financial institutions and regulators. Currently R3CEV, a NY based start up, is working with 42 major banks to develop these standards and best practices with a view to eventually developing the software for a Blockchain settlement system \cite{Deloitte}. The complications in this approach is getting the banks to all agree on which platform to use implement the solution as it also needs to be compatible with each bank's existing systems such as their portfolio risk analysis and management processes \cite{WymanEuro}.
+
+With any new system there is the operational risk of transition. Histories need to be integrated, staff have to be trained or hired, and disaster recovery procedures need to be established in the case of technical failure \cite{Accenture}. There is also a concern around manipulation of the system if a public and not private Blockchain is used. A malicious party, with significant processing power could possibly disrupt the chain by building longer chains with fraudulent blocks faster than the rest of the participants. In a private Blockchain, all participants are well known, but in a public Blockchain this has to be avoided by making it computationally expensive for any one party to make a longer chain faster than the group \cite{gentleIntro}. Mitigation of these risks must be addressed by any party proposing a Blockchain solution.
+
+Algorithm trading solutions have proven popular with asset managers and other clients of financial institutions as they provide a lower cost alternative to the full service brokerage previously provided. From the banks point of view, this has reduced revenues and closed some avenues for profitability such as equity research which is now treated more like a cost centre than a source of profit and added value \cite{FT}. There is a concern amongst the major banks that Blockchain will do the same as clients expect the operational savings to be passed on or if they participate directly instead of using the banks. This potential means that the major financial institutions may not actively adopt the technology until forced by a regulator or a challenger has made sufficient progress and attempts to enter the market \cite{WymanEuro}. There are a number of FinTech start-ups attempting to rise to this challenge with increasing funding available in recent years \cite{Accenture} and there is also potential for existing electronic trade systems providers such as Bloomberg to join the conversation.
+
+Challengers and disruptors to other industries have operated under the adage that it is ``easier to ask forgiveness than permission''. However in financial services, regulators must approve any technological innovations ahead of time. The legal framework to deal with the new processes must be drafted and accepted. Also, regulators will need the ability to amend blocks in the chain if there has been a legal challenge \cite{WymanEuro}. Different solutions have been proposed such as allowing regulators `skeleton' keys to allow them to unlock and decrypt any block in the chain but a fully integrated solution has not yet been proposed.
+
+Bitcoin has shown that Blockchain is now more than just a proof of concept, but there are still lots of holes to be addressed \cite{Deloitte}. One of these is getting enough technology professionals, with suitable experience, to lead and manage the teams. As the idea was first proposed less than ten years ago, few people have complete experience across all facets of the technology and bringing in specialists in each area, to work together is slowing progress. A further concern is that taking technology that works with a relatively small market like bitcoin, and applying it to larger markets where many more blocks will need to be generated have raised questions around scalability and throughput capacity \cite{WymanEuro}. Whilst is it likely banks with budget to spend on servers and storage will be able to handle this, the initial investment required has caused some stakeholders to hold off on spending until technology is guaranteed. The existing technology infrastructure simply isn't advanced enough to support the processing power required to ensure the Blockchain is robust \cite{WymanEuro}.
+
+Finally, even the most optimistic forecasts don't predict mass adoption before 2025 \cite{WymanEuro}. This means there is a lot of resources required for all the initial investment into development, infrastructure, and then integration, for payback not expected for over a decade. Directors of banks who answer to shareholders focused on the next quarterly earnings report will have a hard time justifying such an aggressive R\&D budget \cite{Accenture}.
+
+\section{Conclusion}
+
+While many firms have started the exploratory phase for Blockchain, testing possible solutions to the regulatory and technological hurdles associated with the technology, it is not likely that all the hurdles have yet been identified \cite{Accenture}. Despite this, and despite the current known issues, the potential benefits will continue to attract new entrants. In coming years, with regulatory approval, this technology may be applied to peripheral parts of the trade settlement system, to assist in the proof of concept and eventually come to replace the traditional T+2 settlement process for securities.
+
+
+\newpage
+
+\Urlmuskip=0mu plus 1mu\relax
+\bibliographystyle{abbrvnat}
+\nocite{*}
+\bibliography{references}
+
+\begin{appendices}
+\section{Source Code} \label{App:AppendixA}
+If you'd like to check out my \LaTeX\ source code, it's available for download from my GitHub: https://github.com/barrettjamesr
+\end{appendices}
+
+\end{document}
+
+
+
+
